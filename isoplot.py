@@ -6,8 +6,8 @@ import numpy as np
 def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale=[0,1]):
     left, bottom, width, height = 0.1, 0.1, 0.8, 0.8
     
-    z1 = ( z1 * (scale[1]-scale1[0]) + scale[0] ) / 100
-    z2 = ( z2 * (scale[1]-scale2[0]) + scale[0] ) / 100
+    z1 = ( z1 * (scale[1]-scale[0]) + scale[0] ) / 100
+    z2 = ( z2 * (scale[1]-scale[0]) + scale[0] ) / 100
 
     x_vals = np.linspace(zone[2], zone[3], z1.shape[1])
     y_vals = np.linspace(zone[1], zone[0], z1.shape[0])

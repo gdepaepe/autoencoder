@@ -3,14 +3,14 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def isoplot(z1,z2,legend1,legend2, zone=[-65,50,25,60], scale=[0,1]):
+def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale1=[0,1], scale2=[0,1]):
     left, bottom, width, height = 0.1, 0.1, 0.8, 0.8
     
-    #z1 = z1 * (scale[1]-scale[0]) + scale[0]
-    #z2 = z2 * (scale[1]-scale[0]) + scale[0]
+    z1 = ( z1 * (scale1[1]-scale1[0]) + scale1[0] ) / 100
+    z2 = ( z2 * (scale2[1]-scale2[0]) + scale2[0] ) / 100
 
-    x_vals = np.linspace(zone[0], zone[1], z1.shape[1])
-    y_vals = np.linspace(zone[2], zone[3], z1.shape[0])
+    x_vals = np.linspace(zone[2], zone[3], z1.shape[1])
+    y_vals = np.linspace(zone[1], zone[0], z1.shape[0])
     x, y = np.meshgrid(x_vals, y_vals)
 
     fig = plt.figure(figsize=(12,4))
@@ -34,6 +34,6 @@ if __name__ == "__main__":
     x=np.load("data/data.npy")
     z=np.load("data/zone.npy")
     s=np.load("data/scale.npy")
-    x0=x[0,:,:,0].reshape(x.shape[1],x.shape[2])
-    x1=x[1,:,:,0].reshape(x.shape[1],x.shape[2])
-    isoplot(x1,x0,"test","test",z,s)
+    x0=x[24,:,:,0]
+    x1=x[25,:,:,0]
+    isoplot(x1,x0,"test","test",z,s[0],s[0])

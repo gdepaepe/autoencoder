@@ -3,7 +3,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale=[0,1]):
+def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale=[0,1], title='MSL [hPa]'):
     left, bottom, width, height = 0.1, 0.1, 0.8, 0.8
     
     z1 = ( z1 * (scale[1]-scale[0]) + scale[0] ) / 100
@@ -20,7 +20,7 @@ def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale=[0,1]):
     
     ax.clabel(cp1, inline=True, fontsize=10)
     ax.clabel(cp2, inline=True, fontsize=10)
-    ax.set_title('MSLP')
+    ax.set_title(title)
     ax.set_xlabel('degrees')
     ax.set_ylabel('degrees')
     
@@ -31,7 +31,7 @@ def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale=[0,1]):
     plt.show()
 
 if __name__ == "__main__":
-    x=np.load("data/data.npy")
+    x=np.load("data/era20c.npy")
     z=np.load("data/zone.npy")
     s=np.load("data/scale.npy")
     x0=x[24,:,:,0]

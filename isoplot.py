@@ -15,8 +15,8 @@ def isoplot(z1,z2,legend1,legend2, zone=[60,25,-65,50], scale=[0,1], title='MSL 
 
     fig = plt.figure(figsize=(12,4))
     ax = fig.add_axes([left, bottom, width, height]) 
-    cp1 = plt.contour( x, y, z1[::-1], colors='red')
-    cp2 = plt.contour( x, y, z2[::-1], colors='blue')
+    cp1 = plt.contour( x, y, z1[::-1], colors='blue')
+    cp2 = plt.contour( x, y, z2[::-1], colors='red')
     
     ax.clabel(cp1, inline=True, fontsize=10)
     ax.clabel(cp2, inline=True, fontsize=10)

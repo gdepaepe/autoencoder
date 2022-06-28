@@ -17,6 +17,6 @@ Clone this repository by:
 ```
 git clone https://gitlab.com/kdg-ti/geertdepaepe/era20c.git
 ```
-Create a "data" subdirectory and copy the MSL and Z500 files from the ERA-20C reanalysis in this directory.
+Copy the MSL and Z500 files from the ERA-20C reanalysis in the "data" directory.
 
 Create a Jupyter Lab environment (see 7_annex1 for the installation of the toolkit) and connect to the cloned map. Read the 0_introduction notebook as introduction.
